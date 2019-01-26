@@ -25,7 +25,7 @@ timezone: Etc/UTC
 collections:
   staff_members:
     output: false
-  clients:
+  ensembles:
     output: true
 
 paginate: 10
@@ -60,13 +60,9 @@ defaults:
           height: 2000
   - scope:
       path: ""
-      type: "clients"
+      type: "ensembles"
     values:
-      layout: "client"
-      _options:
-        image_path:
-          width: 2000
-          height: 2000
+      layout: "ensemble"
   - scope:
       path: ""
       type: "staff_members"

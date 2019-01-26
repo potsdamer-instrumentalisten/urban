@@ -6,15 +6,15 @@ subtitle: See some of our proud customers with exemplary results.
 
 <section class="diagonal patterned">
 	<div class="container">
-	    <p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_clients/" class="btn"><strong>&#9998;</strong> Manage Clients</a></p>
+	    <p class="editor-link" style="text-align: center;"><a href="cloudcannon:collections/_ensembles/" class="btn"><strong>&#9998;</strong> Manage ensembles</a></p>
 		<ul class="image-grid">
-			{% for client in site.clients %}
+			{% for ensemble in site.ensembles %}
 				<li>
-					<a href="{{ site.baseurl }}{{ client.url }}">
-						<img src="{% include relative-src.html src=client.image_path %}" alt="{{ person.name }}">
+					<a href="{{ site.baseurl }}{{ ensemble.url }}">
+						<img src="{% include relative-src.html src=ensemble.image_path %}" alt="{{ person.name }}">
 						<div class="details">
-							<div class="name">{{ client.name }}</div>
-							<div class="position">{{ client.subtitle }}</div>
+							<div class="name">{{ ensemble.name }}</div>
+							<div class="position">{{ ensemble.subtitle }}</div>
 						</div>
 					</a>
 				</li>
