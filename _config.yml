@@ -77,10 +77,10 @@ defaults:
     values:
       layout: "page"
   - scope:
-      path: "index.html"
+      path: "index.md"
       type: "pages"
     values:
-      layout: "default"
+      layout: "home"
 
 # -----------
 # CloudCannon
