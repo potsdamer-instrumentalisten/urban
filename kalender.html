@@ -29,6 +29,23 @@ subtitle: Finde unsere aktuellen Termine.
 <script src='/fullcalendar/packages/google-calendar/main.js'></script>
 
 <script>
+	function tempAlert(msg,duration)
+	{
+		var el = document.createElement("div");
+		el.setAttribute("class","notification");
+		el.innerHTML = msg;
+
+		var wrapper = document.createElement("div");
+		wrapper.setAttribute("class","notificationWrapper");
+		wrapper.innerHTML = el;
+
+
+	
+	setTimeout(function(){
+	wrapper.parentNode.removeChild(wrapper);
+	},duration);
+	document.body.appendChild(wrapper);
+	}
 
 	document.addEventListener('DOMContentLoaded', function() {
 		var calendarEl = document.getElementById('calendar');
@@ -36,6 +53,36 @@ subtitle: Finde unsere aktuellen Termine.
 		var calendar = new FullCalendar.Calendar(calendarEl, {
 			plugins: [ 'dayGrid', 'googleCalendar' ],
 			eventLimit: true, // for all non-TimeGrid views
+			header: {
+				left: 'title',
+				center: '',
+				right: 'today prevYear,prev,next,nextYear'
+			},
+			footer: {
+				left: 'iCal custom2',
+				center: '',
+				right: ''
+			},
+			customButtons: {
+				iCal: {
+					text: 'iCal',
+					click: function() {
+						const el = document.createElement('textarea');
+						el.value = 'https://calendar.google.com/calendar/ical/988mcobbk63uv1l1drvm46hb8c%40group.calendar.google.com/public/basic.ics';
+						document.body.appendChild(el);
+						el.select();
+						document.execCommand('copy');
+						document.body.removeChild(el);
+						tempAlert("Copied to clipboard: https://calendar.google.com/calendar/ical/988mcobbk63uv1l1drvm46hb8c%40group.calendar.google.com/public/basic.ics",2000);
+					}
+				},
+				custom2: {
+					text: 'custom 2',
+					click: function() {
+						alert('Copied to clipboard!');
+					}
+				}
+			},
 			
 			/* renew? */
 			/**
