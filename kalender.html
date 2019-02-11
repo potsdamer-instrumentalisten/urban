@@ -35,6 +35,7 @@ subtitle: Finde unsere aktuellen Termine.
 
 		var calendar = new FullCalendar.Calendar(calendarEl, {
 			plugins: [ 'dayGrid', 'googleCalendar' ],
+			eventLimit: true, // for all non-TimeGrid views
 			
 			/* renew? */
 			/**
@@ -42,12 +43,18 @@ subtitle: Finde unsere aktuellen Termine.
 			 * - locale de
 			 * - popups for events
 			 * - change theme
+			 */
 			googleCalendarApiKey: 'AIzaSyBiwxPGKclc0YpqyQ1GxSJw_HVdPrf3GmU',
 
       // US Holidays
-      events: {
-				googleCalendarId: '988mcobbk63uv1l1drvm46hb8c@group.calendar.google.com'
+      eventSources: [{
+				googleCalendarId: '988mcobbk63uv1l1drvm46hb8c@group.calendar.google.com',
+				className: 'nice-event'
 			},
+			{
+				googleCalendarId: '3fmgduviitseq16ldlgcrcfdsk@group.calendar.google.com'
+			}
+		]
 
       /* eventClick: function(event) {
         // opens events in a popup window
