@@ -37,12 +37,12 @@ subtitle: Finde unsere aktuellen Termine.
 
 		var wrapper = document.createElement("div");
 		wrapper.setAttribute("class","notificationWrapper");
-		wrapper.innerHTML = el;
+		wrapper.appendChild(el);
 
 
 	
 	setTimeout(function(){
-	wrapper.parentNode.removeChild(wrapper);
+	/* wrapper.parentNode.removeChild(wrapper); */
 	},duration);
 	document.body.appendChild(wrapper);
 	}
@@ -90,6 +90,8 @@ subtitle: Finde unsere aktuellen Termine.
 			 * - locale de
 			 * - popups for events
 			 * - change theme
+			 * - make everythin configurable
+			 * - add iCal buttons
 			 */
 			googleCalendarApiKey: 'AIzaSyBiwxPGKclc0YpqyQ1GxSJw_HVdPrf3GmU',
 

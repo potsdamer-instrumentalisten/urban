@@ -1,25 +1,25 @@
 .notification {
     position:fixed;
     bottom:5%;
-    left:50%;
+    /* left:50%; */
     background-color:$brand-color;
     font-size: 1.2em;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 6px; /* todo change to same value as buttons */
   padding: 5px 20px;
   /* margin-left: -75px; */
   justify-content: center;
 /*   margin: 0 auto; */
     color: #ffffff;
     opacity: .9;
-/*     display: inline-block; */
+    display: inline-block;
 }
 
-/* .notificationWrapper {
+.notificationWrapper {
     background-color: green;
     text-align: center;
   }
-.notification {
+/* .notification {
 background-color: red; 
 display: inline-block;
 } */
