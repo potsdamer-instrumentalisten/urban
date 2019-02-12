@@ -27,6 +27,7 @@ subtitle: Finde unsere aktuellen Termine.
 <script src='{{ site.baseurl }}/fullcalendar/packages/core/main.js'></script>
 <script src='{{ site.baseurl }}/fullcalendar/packages/daygrid/main.js'></script>
 <script src='{{ site.baseurl }}/fullcalendar/packages/google-calendar/main.js'></script>
+<script src='{{ site.baseurl }}/fullcalendar/packages/core/locales/de.js'></script>
 
 <script>
 	function tempAlert(msg,duration)
@@ -53,6 +54,7 @@ subtitle: Finde unsere aktuellen Termine.
 		var calendar = new FullCalendar.Calendar(calendarEl, {
 			plugins: [ 'dayGrid', 'googleCalendar' ],
 			eventLimit: true, // for all non-TimeGrid views
+			locale: 'de',
 			header: {
 				left: 'title',
 				center: '',
@@ -87,11 +89,11 @@ subtitle: Finde unsere aktuellen Termine.
 			/* renew? */
 			/**
 			 * TODOs
-			 * - locale de
 			 * - popups for events
 			 * - change theme
 			 * - make everythin configurable
 			 * - add iCal buttons: change radius of box
+			 * - list view
 			 */
 			googleCalendarApiKey: 'AIzaSyBiwxPGKclc0YpqyQ1GxSJw_HVdPrf3GmU',
 
