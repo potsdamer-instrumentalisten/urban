@@ -62,7 +62,7 @@ subtitle: Finde unsere aktuellen Termine.
 				right: 'today prevYear,prev,next,nextYear'
 			},
 			footer: {
-				left: 'iCal custom2',
+				left: 'iCal',
 				center: '',
 				right: ''
 			},
@@ -76,13 +76,7 @@ subtitle: Finde unsere aktuellen Termine.
 						el.select();
 						document.execCommand('copy');
 						document.body.removeChild(el);
-						tempAlert("Copied to clipboard: https://calendar.google.com/calendar/ical/988mcobbk63uv1l1drvm46hb8c%40group.calendar.google.com/public/basic.ics",2000);
-					}
-				},
-				custom2: {
-					text: 'custom 2',
-					click: function() {
-						alert('Copied to clipboard!');
+						tempAlert("Copied!",2000);
 					}
 				}
 			},
@@ -91,9 +85,8 @@ subtitle: Finde unsere aktuellen Termine.
 			/**
 			 * TODOs
 			 * - popups for events
-			 * - change theme
+			 * - change theme (colors and radius of elements)
 			 * - make everythin configurable
-			 * - add iCal buttons: change radius of box
 			 * - list view
 			 */
 			googleCalendarApiKey: 'AIzaSyBiwxPGKclc0YpqyQ1GxSJw_HVdPrf3GmU',
