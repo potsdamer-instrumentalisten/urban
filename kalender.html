@@ -40,12 +40,10 @@ subtitle: Finde unsere aktuellen Termine.
 		wrapper.setAttribute("class","notificationWrapper");
 		wrapper.appendChild(el);
 
-
-	
-	setTimeout(function(){
-	wrapper.parentNode.removeChild(wrapper);
-	},duration);
-	document.body.appendChild(wrapper);
+		setTimeout(function(){
+		wrapper.parentNode.removeChild(wrapper);
+		},duration);
+		document.body.appendChild(wrapper);
 	}
 
 	document.addEventListener('DOMContentLoaded', function() {
