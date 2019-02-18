@@ -23,9 +23,11 @@ subtitle: Finde unsere aktuellen Termine.
 
 <link href='{{ site.baseurl }}/fullcalendar/packages/core/main.css' rel='stylesheet' />
 <link href='{{ site.baseurl }}/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
+<link href='{{ site.baseurl }}/fullcalendar/packages/list/main.css' rel='stylesheet' />
 
 <script src='{{ site.baseurl }}/fullcalendar/packages/core/main.js'></script>
 <script src='{{ site.baseurl }}/fullcalendar/packages/daygrid/main.js'></script>
+<script src='{{ site.baseurl }}/fullcalendar/packages/list/main.js'></script>
 <script src='{{ site.baseurl }}/fullcalendar/packages/google-calendar/main.js'></script>
 <script src='{{ site.baseurl }}/fullcalendar/packages/core/locales-all.min.js'></script>
 
@@ -50,7 +52,7 @@ subtitle: Finde unsere aktuellen Termine.
 		var calendarEl = document.getElementById('calendar');
 
 		var calendar = new FullCalendar.Calendar(calendarEl, {
-			plugins: [ 'dayGrid', 'googleCalendar' ],
+			plugins: [ 'dayGrid', 'list', 'googleCalendar' ],
 			eventLimit: true, // for all non-TimeGrid views
 			locale: 'de',
 			header: {
@@ -59,7 +61,7 @@ subtitle: Finde unsere aktuellen Termine.
 				right: 'today prevYear,prev,next,nextYear'
 			},
 			footer: {
-				left: 'iCal',
+				left: 'dayGridMonth,listMonth iCal',
 				center: '',
 				right: ''
 			},
@@ -88,7 +90,6 @@ subtitle: Finde unsere aktuellen Termine.
 			 *     - could be used to include a hover popup/notification with CSS -> + this keeps the link to the full google view
 			 * - change theme (colors and radius of elements)
 			 * - make everythin configurable
-			 * - list view
 			 */
 			googleCalendarApiKey: 'AIzaSyBiwxPGKclc0YpqyQ1GxSJw_HVdPrf3GmU',
 
@@ -96,9 +97,6 @@ subtitle: Finde unsere aktuellen Termine.
       eventSources: [{
 				googleCalendarId: '988mcobbk63uv1l1drvm46hb8c@group.calendar.google.com',
 				className: 'nice-event'
-			},
-			{
-				googleCalendarId: '3fmgduviitseq16ldlgcrcfdsk@group.calendar.google.com'
 			}
 		]
 
