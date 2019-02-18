@@ -3,24 +3,6 @@ title: Kalender
 heading: Kalender
 subtitle: Finde unsere aktuellen Termine.
 ---
-
-<!-- <link rel='stylesheet' href='/js/fullcalendar/fullcalendar.css' />
-<script src='/js/fullcalendar/lib/jquery.min.js'></script>
-<script src='/js/fullcalendar/lib/moment.min.js'></script>
-<script src='/js/fullcalendar/fullcalendar.js'></script>
-<script>
-
-	$(document).ready(function() {
-
-		$('#calendar').fullCalendar({
-			editable: false,
-			eventLimit: true, // allow "more" link when too many events
-		});
-
-	});
-
-</script> -->
-
 <link href='{{ site.baseurl }}/fullcalendar/packages/core/main.css' rel='stylesheet' />
 <link href='{{ site.baseurl }}/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
 <link href='{{ site.baseurl }}/fullcalendar/packages/list/main.css' rel='stylesheet' />
@@ -32,27 +14,26 @@ subtitle: Finde unsere aktuellen Termine.
 <script src='{{ site.baseurl }}/fullcalendar/packages/core/locales-all.min.js'></script>
 
 <script>
-	function tempAlert(msg,duration)
-	{
+	function tempAlert(msg, duration) {
 		var el = document.createElement("div");
-		el.setAttribute("class","notification");
+		el.setAttribute("class", "notification");
 		el.innerHTML = msg;
 
 		var wrapper = document.createElement("div");
-		wrapper.setAttribute("class","notificationWrapper");
+		wrapper.setAttribute("class", "notificationWrapper");
 		wrapper.appendChild(el);
 
-		setTimeout(function(){
-		wrapper.parentNode.removeChild(wrapper);
-		},duration);
+		setTimeout(function () {
+			wrapper.parentNode.removeChild(wrapper);
+		}, duration);
 		document.body.appendChild(wrapper);
 	}
 
-	document.addEventListener('DOMContentLoaded', function() {
+	document.addEventListener('DOMContentLoaded', function () {
 		var calendarEl = document.getElementById('calendar');
 
 		var calendar = new FullCalendar.Calendar(calendarEl, {
-			plugins: [ 'dayGrid', 'list', 'googleCalendar' ],
+			plugins: ['dayGrid', 'list', 'googleCalendar'],
 			eventLimit: true, // for all non-TimeGrid views
 			locale: 'de',
 			header: {
@@ -68,18 +49,18 @@ subtitle: Finde unsere aktuellen Termine.
 			customButtons: {
 				iCal: {
 					text: 'iCal',
-					click: function() {
+					click: function () {
 						const el = document.createElement('textarea');
 						el.value = '{{ site.google_calendar.ical }}';
 						document.body.appendChild(el);
 						el.select();
 						document.execCommand('copy');
 						document.body.removeChild(el);
-						tempAlert("Copied!",2000);
+						tempAlert("Copied!", 2000);
 					}
 				}
 			},
-			
+
 			/* renew? */
 			/**
 			 * TODOs
@@ -92,16 +73,16 @@ subtitle: Finde unsere aktuellen Termine.
 			 */
 			googleCalendarApiKey: '{{ site.google_calendar.api_key }}',
 
-      // US Holidays
-      events: {
-			googleCalendarId: '{{ site.google_calendar.calendar_id }}'
-	  }
+			// US Holidays
+			events: {
+				googleCalendarId: '{{ site.google_calendar.calendar_id }}'
+			}
 
-      /* eventClick: function(event) {
-        // opens events in a popup window
-        window.open(event.url, '_blank', 'width=700,height=600');
-        return false;
-      } */
+			/* eventClick: function(event) {
+			  // opens events in a popup window
+			  window.open(event.url, '_blank', 'width=700,height=600');
+			  return false;
+			} */
 		});
 
 		calendar.render();
@@ -113,8 +94,6 @@ subtitle: Finde unsere aktuellen Termine.
 <section class="diagonal patterned">
 	<div class="container">
 		<div id="calendar">
-			<!-- Use the calender provided by google -->
-		  <!-- <iframe src="{{ site.data.company.calendar }}&amp;showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;wkst=2&amp;hl=de" style="border: 0" width="100%" height="550" frameborder="0" scrolling="no"></iframe> -->
 		</div>
 	</div>
 </section>
