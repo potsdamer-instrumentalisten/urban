@@ -70,7 +70,7 @@ subtitle: Finde unsere aktuellen Termine.
 					text: 'iCal',
 					click: function() {
 						const el = document.createElement('textarea');
-						el.value = 'https://calendar.google.com/calendar/ical/988mcobbk63uv1l1drvm46hb8c%40group.calendar.google.com/public/basic.ics';
+						el.value = '{{ site.google_calendar.ical }}';
 						document.body.appendChild(el);
 						el.select();
 						document.execCommand('copy');
@@ -89,16 +89,13 @@ subtitle: Finde unsere aktuellen Termine.
 			 *   - render callback - could be used to render more information into the event element
 			 *     - could be used to include a hover popup/notification with CSS -> + this keeps the link to the full google view
 			 * - change theme (colors and radius of elements)
-			 * - make everythin configurable
 			 */
-			googleCalendarApiKey: 'AIzaSyBiwxPGKclc0YpqyQ1GxSJw_HVdPrf3GmU',
+			googleCalendarApiKey: '{{ site.google_calendar.api_key }}',
 
       // US Holidays
-      eventSources: [{
-				googleCalendarId: '988mcobbk63uv1l1drvm46hb8c@group.calendar.google.com',
-				className: 'nice-event'
-			}
-		]
+      events: {
+			googleCalendarId: '{{ site.google_calendar.calendar_id }}'
+	  }
 
       /* eventClick: function(event) {
         // opens events in a popup window

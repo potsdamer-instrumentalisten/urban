@@ -3,6 +3,10 @@ url: "https://potsdamer-instrumentalisten.de/"
 baseurl:
 google_analytics_key:
 google_maps_javascript_api_key:
+google_calendar:
+  api_key: 'AIzaSyBiwxPGKclc0YpqyQ1GxSJw_HVdPrf3GmU'
+  calendar_id: '988mcobbk63uv1l1drvm46hb8c@group.calendar.google.com'
+  ical: 'https://calendar.google.com/calendar/ical/988mcobbk63uv1l1drvm46hb8c%40group.calendar.google.com/public/basic.ics'
 disqus_shortname:
 
 # Default description in social shares for the jekyll-seo-tag gem
