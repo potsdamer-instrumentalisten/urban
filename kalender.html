@@ -60,6 +60,15 @@ subtitle: Finde unsere aktuellen Termine.
 					}
 				}
 			},
+			eventRender: function(info) {
+				console.log(info);
+				/* var tooltip = new Tooltip(info.el, {
+				title: info.event.extendedProps.description,
+				placement: 'top',
+				trigger: 'hover',
+				container: 'body'
+			}); */
+			},
 
 			/* renew? */
 			/**
