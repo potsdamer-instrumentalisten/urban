@@ -4,8 +4,8 @@ heading: Kalender
 subtitle: Finde unsere aktuellen Termine.
 ---
 <link href='{{ site.baseurl }}/fullcalendar/packages/core/main.css' rel='stylesheet' />
-<link href='{{ site.baseurl }}/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
-<link href='{{ site.baseurl }}/fullcalendar/packages/list/main.css' rel='stylesheet' />
+<link href='{{ site.baseurl }}/fullcalendar/packages/daygrid/main.min.css' rel='stylesheet' />
+<link href='{{ site.baseurl }}/fullcalendar/packages/list/main.min.css' rel='stylesheet' />
 
 <script src='{{ site.baseurl }}/fullcalendar/packages/core/main.js'></script>
 <script src='{{ site.baseurl }}/fullcalendar/packages/daygrid/main.js'></script>
@@ -83,19 +83,13 @@ subtitle: Finde unsere aktuellen Termine.
 			/* renew? */
 			/**
 			 * TODOs
-			 * - popups for events
-			 *   - https://stackoverflow.com/questions/48505075/how-to-show-location-in-fullcalendar-and-gmail
-			 *   - eventClick could be used
-			 *   - render callback - could be used to render more information into the event element
-			 *     - could be used to include a hover popup/notification with CSS -> + this keeps the link to the full google view
-			 *     - https://www.w3schools.com/css/css_tooltip.asp
-			 *     - view-source:https://fullcalendar.io/docs/v4/event-tooltip-demo
-			 *     - https://www.w3schools.com/howto/howto_js_add_class.asp
 			 * - change theme (colors and radius of elements)
 			 *   - elements company colory
 			 *   - current day -> footer grey
 			 *   - radius of buttons
 			 *   - list view?
+			 *   - make ist globally configurable
+			 *   - use .min.* versions
 			 */
 			googleCalendarApiKey: '{{ site.google_calendar.api_key }}',
 
