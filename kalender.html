@@ -13,6 +13,9 @@ subtitle: Finde unsere aktuellen Termine.
 <script src='{{ site.baseurl }}/fullcalendar/packages/google-calendar/main.js'></script>
 <script src='{{ site.baseurl }}/fullcalendar/packages/core/locales-all.min.js'></script>
 
+<script src='https://unpkg.com/popper.js/dist/umd/popper.min.js'></script>
+<script src='https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js'></script>
+
 <script>
 	function tempAlert(msg, duration) {
 		var el = document.createElement("div");
@@ -62,13 +65,20 @@ subtitle: Finde unsere aktuellen Termine.
 			},
 			eventRender: function(info) {
 				console.log(info);
-				/* var tooltip = new Tooltip(info.el, {
-				title: info.event.extendedProps.description,
+				var location = info.event.extendedProps.location || '-';
+				var time = info.event.start.toLocaleString();
+				var tooltip = new Tooltip(info.el, {
+				title: '<strong>' + info.event.title + '</strong><br><br><strong>Wann:</strong> ' + time + ' Uhr<br><strong>Wo:</strong> ' + location,
 				placement: 'top',
 				trigger: 'hover',
-				container: 'body'
-			}); */
+				container: 'body',
+				html: 'true'
+			});
 			},
+
+
+
+			
 
 			/* renew? */
 			/**
@@ -80,6 +90,7 @@ subtitle: Finde unsere aktuellen Termine.
 			 *     - could be used to include a hover popup/notification with CSS -> + this keeps the link to the full google view
 			 *     - https://www.w3schools.com/css/css_tooltip.asp
 			 *     - view-source:https://fullcalendar.io/docs/v4/event-tooltip-demo
+			 *     - https://www.w3schools.com/howto/howto_js_add_class.asp
 			 * - change theme (colors and radius of elements)
 			 *   - elements company colory
 			 *   - current day -> footer grey
